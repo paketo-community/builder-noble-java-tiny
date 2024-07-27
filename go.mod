@@ -1,4 +1,4 @@
-module github.com/paketo-buildpacks/builder-noble-buildpackless-base
+module github.com/paketo-buildpacks/builder-noble-java-tiny
 
 go 1.22.5
 

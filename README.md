@@ -1,23 +1,21 @@
-# Paketo Noble Buildpackless Base Builder
+# Paketo Noble Java Tiny Builder
 
-## `paketobuildpacks/builder-noble-buildpackless-base:latest`
+## `paketobuildpacks/builder-noble-java-tiny:latest`
 
-This builder uses the [Paketo Noble Base
-Stack](https://github.com/paketo-buildpacks/noble-base-stack) (an Ubuntu Noble
-base image) and contains **no buildpacks nor order groups**. To use this
-builder, you must specify buildpacks at build time using whatever mechanisms
-your CNB platform of choice offers.
+This builder uses the [Paketo Noble Tiny
+Stack](https://github.com/paketo-buildpacks/noble-tiny-stack) (an Ubuntu Noble
+tiny image) and contains **only Java composite buildpacks**. To use this
+builder, you can rely on the default order group.
 
 For example, with the `pack` CLI, use `--buildpack` as follows:
 ```bash
-pack build dotnet-with-buildpackless-builder \
---buildpack gcr.io/paketo-buildpacks/dotnet-core \
---builder paketobuildpacks/builder-noble-buildpackless-base:latest
+pack build great-java-app \
+--builder paketobuildpacks/builder-noble-java-tiny:latest
 ```
 
 To see which versions of build and run images and the lifecycle are contained
 within a given builder version, see the
-[Releases](https://github.com/paketo-buildpacks/builder-noble-buildpackless-base/releases)
+[Releases](https://github.com/paketo-buildpacks/builder-noble-java-tiny/releases)
 on this repo. This information is also available in the `builder.toml`.
 
 For more information about this builder and how to use it, visit the [Paketo

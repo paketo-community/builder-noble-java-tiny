@@ -43,7 +43,7 @@ func TestSmoke(t *testing.T) {
 
 	Expect(occam.NewDocker().Pull.Execute(config.Procfile))
 
-	suite := spec.New("Buildpackless Smoke", spec.Parallel(), spec.Report(report.Terminal{}))
+	suite := spec.New("Buildpack Smoke", spec.Parallel(), spec.Report(report.Terminal{}))
 	suite("Procfile", testProcfile)
 	suite.Run(t)
 }
