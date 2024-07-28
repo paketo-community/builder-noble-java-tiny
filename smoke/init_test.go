@@ -1,32 +1,25 @@
 package smoke_test
 
 import (
-	"encoding/json"
 	"flag"
-	"os"
 	"testing"
 	"time"
 
-	"github.com/paketo-buildpacks/occam"
+	"github.com/onsi/gomega/format"
 	"github.com/sclevine/spec"
 	"github.com/sclevine/spec/report"
 
 	. "github.com/onsi/gomega"
 )
 
-var (
-	Builder string
-
-	config struct {
-		Procfile string `json:"procfile"`
-	}
-)
+var Builder string
 
 func init() {
 	flag.StringVar(&Builder, "name", "", "")
 }
 
 func TestSmoke(t *testing.T) {
+	format.MaxLength = 0
 	Expect := NewWithT(t).Expect
 
 	flag.Parse()
@@ -35,15 +28,8 @@ func TestSmoke(t *testing.T) {
 
 	SetDefaultEventuallyTimeout(60 * time.Second)
 
-	file, err := os.Open("../smoke.json")
-	Expect(err).NotTo(HaveOccurred())
-
-	Expect(json.NewDecoder(file).Decode(&config)).To(Succeed())
-	Expect(file.Close()).To(Succeed())
-
-	Expect(occam.NewDocker().Pull.Execute(config.Procfile))
-
-	suite := spec.New("Buildpack Smoke", spec.Parallel(), spec.Report(report.Terminal{}))
-	suite("Procfile", testProcfile)
+	suite := spec.New("Smoke", spec.Parallel(), spec.Report(report.Terminal{}))
+	suite("Java Native Image", testJavaNativeImage)
+	suite("Java", testJava)
 	suite.Run(t)
 }
