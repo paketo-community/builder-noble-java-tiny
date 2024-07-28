@@ -12,11 +12,13 @@ description = "Ubuntu 24.04 Noble Numbat tiny image with only Java buildpacks in
   version = "0.20.0"
 
 [[order]]
+
   [[order.group]]
     id = "paketo-buildpacks/java-native-image"
     version = "9.8.0"
 
 [[order]]
+
   [[order.group]]
     id = "paketo-buildpacks/java"
     version = "15.2.0"
@@ -28,9 +30,9 @@ description = "Ubuntu 24.04 Noble Numbat tiny image with only Java buildpacks in
   run-image-mirrors = []
 
 [[targets]]
-  os = "linux"
   arch = "amd64"
+  os = "linux"
 
 [[targets]]
-  os = "linux"
   arch = "arm64"
+  os = "linux"
