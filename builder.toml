@@ -24,7 +24,7 @@ description = "Ubuntu 24.04 Noble Numbat tiny image with only Java buildpacks in
     version = "15.2.0"
 
 [stack]
-  build-image = "docker.io/paketobuildpacks/build-noble-tiny:0.0.9"
+  build-image = "docker.io/paketobuildpacks/build-noble-tiny:0.0.10"
   id = "io.buildpacks.stacks.noble.tiny"
   run-image = "index.docker.io/paketobuildpacks/run-noble-tiny:latest"
   run-image-mirrors = []
