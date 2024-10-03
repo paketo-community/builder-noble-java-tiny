@@ -1,6 +1,10 @@
-# Paketo Noble Java Tiny Builder
+# Archived and moved
+## Please go to: https://github.com/paketo-buildpacks/builder-jammy-java-tiny
 
-## `paketobuildpacks/builder-noble-java-tiny:latest`
+
+### Paketo Noble Java Tiny Builder
+
+#### `paketobuildpacks/builder-noble-java-tiny:latest`
 
 This builder uses the [Paketo Noble Tiny
 Stack](https://github.com/paketo-buildpacks/noble-tiny-stack) (an Ubuntu Noble
