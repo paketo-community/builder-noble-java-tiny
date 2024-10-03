@@ -1,5 +1,5 @@
 # Archived and moved
-## Please go to: https://github.com/paketo-buildpacks/builder-jammy-java-tiny
+## Please go to: https://github.com/paketo-buildpacks/builder-noble-java-tiny
 
 
 ### Paketo Noble Java Tiny Builder
